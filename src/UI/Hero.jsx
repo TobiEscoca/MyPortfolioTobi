@@ -1,104 +1,59 @@
-import React, { useState } from "react";
+import React from "react";
 
 export const Hero = () => {
-  const [hoveredElement, setHoveredElement] = useState(null);
-
-  const GridItem = ({ children, className, ...props }) => {
-    const [isHovered, setIsHovered] = useState(false);
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-    const handleMouseMove = (e) => {
-      const rect = e.currentTarget.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      setMousePos({ x, y });
-    };
-
-    const handleMouseEnter = () => {
-      setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-      setIsHovered(false);
-    };
-
-    // Calcular la sombra basada en la posición del mouse
-    const getShadowStyle = () => {
-      if (!isHovered) return {};
-
-      const rect = { width: 200, height: 200 }; // Tamaño aproximado del elemento
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const deltaX = mousePos.x - centerX;
-      const deltaY = mousePos.y - centerY;
-
-      // Normalizar para crear sombra direccional
-      const shadowX = (deltaX / centerX) * 15;
-      const shadowY = (deltaY / centerY) * 15;
-
-      return {
-        boxShadow: `${shadowX}px ${shadowY}px 20px rgba(0, 0, 0, 0.4)`,
-        transform: `translateZ(0)`,
-      };
-    };
-
-    return (
-      <div
-        className={`${className} transition-all duration-300 ease-out cursor-pointer`}
-        style={getShadowStyle()}
-        onMouseMove={handleMouseMove}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        {...props}
-      >
-        {children}
-      </div>
-    );
-  };
-
   return (
-    <>
-      <div className="grid grid-cols-6 grid-rows-5 gap-4 p-8 h-screen">
-        <GridItem className="col-span-3 row-span-2 bg-white rounded-2xl flex items-center pl-4 gap-4 border-1 border-black-500">
-          <img
-            src={"/public/yo_logo.png"}
-            alt="Bitmoji pulgar arriba toby"
-            className="w-50 h-50"
-          />
-          <div className="flex flex-col">
-            <h1 className="text-2xl font-bold">Toby</h1>
-            <p className="text-sm text-black-500">
-              I’m passionate about code and creativity, with JavaScript as my
-              main language and React as my favorite place to bring ideas to
-              life. I’m currently studying for a University Technical Degree in
-              Programming at UTN, combining formal education with hands-on
-              projects that help me grow every day as a developer.
-            </p>
+    <section
+      id="about"
+      className=" text-white flex flex-col items-center justify-center pt-8"
+    >
+      <div className="flex justify-center items-center p-15 w-full max-w-6xl">
+        <main className="mt-32 text-start flex-col pr-6 align-baseline gap-8">
+          <div className="gap-2 ">
+            <article className="flex items-baseline gap-2">
+              <h1 className="text-5xl font-bold leading-none">Tobías Escoca</h1>
+              <svg
+                className="w-8 h-8 fill-current text-blue-500 "
+                viewBox="0 0 24 24"
+                role="img"
+              >
+                <use
+                  href="/sprite.svg#verified"
+                  xlinkHref="/sprite.svg#verified"
+                />
+              </svg>
+            </article>
+
+            <h2 className="text-2xl">Full Stack Developer</h2>
           </div>
-        </GridItem>
-        <GridItem className="row-span-2 col-start-4 bg-black rounded-2xl flex items-center justify-center">
-          <img src="/public/github_remove_bg.png" alt="github" />
-        </GridItem>
-        <GridItem className="col-span-2 row-span-2 col-start-5 bg-red-500 rounded-2xl">
-          3
-        </GridItem>
-        <GridItem className="row-span-2 row-start-3 bg-yellow-500 rounded-2xl">
-          4
-        </GridItem>
-        <GridItem className="row-span-2 row-start-3 bg-blue-500 rounded-2xl">
-          5
-        </GridItem>
-        <GridItem className="col-span-4 row-span-2 row-start-3 bg-green-500 rounded-2xl">
-          6
-        </GridItem>
-        <GridItem className="col-span-3 row-start-5 bg-purple-500 rounded-2xl">
-          7
-        </GridItem>
-        <GridItem className="col-span-3 col-start-4 row-start-5 bg-pink-500 rounded-2xl">
-          8
-        </GridItem>
+          <p className="pt-4 max-w-xl text-white/90">
+            I build fast and elegant web experiences with a focus on quality,
+            performance, and best practices.
+          </p>
+          <div className="pt-4 flex items-center">
+            <a href="https://github.com/TobiEscoca" target="blank">
+              <button
+                className="button-hero bg-black  flex items-center gap-2 cursor-pointer
+              transition-all duration-300 hover:bg-gradient-to-r from-indigo-700 to-blue-700"
+              >
+                <svg className="w-3 h-3 0" viewBox="0 0 24 24" role="img">
+                  <use
+                    href="/sprite.svg#github"
+                    xlinkHref="/sprite.svg#github"
+                  />
+                </svg>
+                Github
+              </button>
+            </a>
+
+            <button className="button-hero bg-green-700">Download my CV</button>
+          </div>
+        </main>
+        <img
+          src="/public/mi_foto.webp"
+          alt="Cara Tobías Escoca"
+          className="w-80 rounded-full ml-20 object-cover drop-shadow-xl drop-shadow-white"
+        />
       </div>
-    </>
+    </section>
   );
 };
