@@ -1,12 +1,26 @@
-# React + Vite
+#🌐 Portfolio Personal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es mi portfolio desarrollado con React, donde muestro mis proyectos, habilidades y experiencias dentro del mundo de la programación.
+El objetivo principal es contar con un espacio digital moderno y dinámico que refleje mi perfil como desarrollador y me permita compartir mis trabajos con la comunidad.
 
-Currently, two official plugins are available:
+#🚀 Tecnologías utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+• React para la construcción de la interfaz.
+• JavaScript (ES6+) para la lógica de la aplicación.
+• HTML5 y CSS3 para la estructura y los estilos.
+• Vite / Create React App (según corresponda) para el entorno de desarrollo.
 
-## Expanding the ESLint configuration
+#📂 Contenido
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+• Inicio: presentación personal.
+• Proyectos: galería de trabajos realizados con descripciones y enlaces.
+• Habilidades: tecnologías y herramientas que manejo.
+• Contacto: formas de comunicarte conmigo.
+
+#🎯 Objetivo
+
+Este portfolio tiene como fin:
+
+• Reunir mis proyectos en un solo lugar.
+• Reflejar mi crecimiento como programador.
+• Servir como carta de presentación para oportunidades profesionales.
