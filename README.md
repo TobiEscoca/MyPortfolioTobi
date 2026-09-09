@@ -1,26 +1,31 @@
-#🌐 Portfolio Personal
+# Portfolio personal
 
-Este es mi portfolio desarrollado con React, donde muestro mis proyectos, habilidades y experiencias dentro del mundo de la programación.
-El objetivo principal es contar con un espacio digital moderno y dinámico que refleje mi perfil como desarrollador y me permita compartir mis trabajos con la comunidad.
+Portfolio desarrollado con React donde muestro mis proyectos, habilidades y experiencia como desarrollador.
 
-#🚀 Tecnologías utilizadas
+## Tecnologías
 
-• React para la construcción de la interfaz.
-• JavaScript (ES6+) para la lógica de la aplicación.
-• HTML5 y CSS3 para la estructura y los estilos.
-• Vite / Create React App (según corresponda) para el entorno de desarrollo.
+- React 19
+- Vite
+- Tailwind CSS
+- Chakra UI
+- Font Awesome
+- JavaScript (ES6+)
 
-#📂 Contenido
+## Características
 
-• Inicio: presentación personal.
-• Proyectos: galería de trabajos realizados con descripciones y enlaces.
-• Habilidades: tecnologías y herramientas que manejo.
-• Contacto: formas de comunicarte conmigo.
+- Tema claro/oscuro persistente (localStorage + prefers-color-scheme)
+- Diseño responsive
+- Secciones: Inicio, Sobre mí, Habilidades, Experiencia, Contacto
 
-#🎯 Objetivo
+## Instalación y uso
 
-Este portfolio tiene como fin:
+```bash
+npm install      # instalar dependencias
+npm run dev      # entorno de desarrollo
+npm run build    # build de producción en dist/
+npm run preview  # vista previa del build
+```
 
-• Reunir mis proyectos en un solo lugar.
-• Reflejar mi crecimiento como programador.
-• Servir como carta de presentación para oportunidades profesionales.
+## Deploy
+
+Deploy automático a GitHub Pages mediante GitHub Actions al hacer push a main.
