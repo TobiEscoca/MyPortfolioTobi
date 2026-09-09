@@ -1,20 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPython, faJs, faReact, faNodeJs, faGithubAlt } from '@fortawesome/free-brands-svg-icons';
-import { faCode, faDatabase, faBolt, faServer, faCloud, faWind, faBox, faLink, faBroom } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faDatabase, faBolt, faServer, faCloud, faWind, faBox, faLink, faBroom, faHashtag, faLeaf } from '@fortawesome/free-solid-svg-icons';
 
 const tabs = [
   { id: "languages", label: "Languages" },
   { id: "frameworks", label: "Frameworks/Libraries" },
+  { id: "databases", label: "Databases" },
   { id: "cloud", label: "Cloud/DevOps" },
   { id: "concepts", label: "Concepts" },
 ];
 
 const itemsByTab = {
   languages: [
+    {label: "C#", icon: faHashtag },
     { label: "C", icon: faCode },
     { label: "Python", icon: faPython },
     { label: "JavaScript", icon: faJs },
+  ],
+  databases: [
+    { label: "MySQL", icon: faDatabase },
+    { label: "MongoDB", icon: faLeaf },
   ],
   frameworks: [
     { label: "React", icon: faReact },
@@ -35,10 +41,11 @@ const itemsByTab = {
   ],
 };
 
-function Pill({ children, className = "", icon }) {
+function Pill({ children, className = "", icon, ...rest }) {
   return (
     <span
-      className={`px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white shadow hover:bg-white/10 transition-all duration-200 flex items-center gap-2 ${className}`}
+      {...rest}
+      className={`px-4 py-2 rounded-xl bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-800 dark:text-white shadow hover:bg-slate-200 dark:hover:bg-white/10 transition-all duration-300 flex items-center gap-2 ${className}`}
     >
       {icon && <FontAwesomeIcon icon={icon} className="w-4 h-4" />}
       {children}
@@ -84,13 +91,13 @@ export default function Skills() {
     <section
       id="skills"
       ref={sectionRef}
-      className="bg-gradient-to-r from-indigo-700 to-blue-700 w-full py-20 px-6 text-white"
+      className="bg-slate-100 dark:bg-slate-900/60 w-full py-20 px-6 text-slate-900 dark:text-white scroll-mt-24"
     >
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-center">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-4xl font-extrabold text-center font-display">
           Technical Skills
         </h2>
-        <p className="text-center text-white/70 mt-2">
+        <p className="text-center text-slate-600 dark:text-white/70 mt-2">
           My experience in different kind of technologies and languages
         </p>
 
@@ -99,10 +106,10 @@ export default function Skills() {
             <button
               key={t.id}
               onClick={() => setActive(t.id)}
-              className={`px-4 py-2 rounded-full border backdrop-blur-md transition-all duration-200 ${
+              className={`px-4 py-2 rounded-full cursor-pointer border backdrop-blur-md transition-all duration-200 ${
                 active === t.id
-                  ? "bg-white/15 border-white/30"
-                  : "bg-white/5 border-white/10 hover:bg-white/10"
+                  ? "bg-indigo-600 text-white border-indigo-600 dark:bg-indigo-500/20 dark:text-indigo-300 dark:border-indigo-500/40"
+                  : "bg-slate-100 dark:bg-white/5 border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/10"
               }`}
             >
               {t.label}
@@ -111,7 +118,7 @@ export default function Skills() {
         </div>
 
         <div className="mt-8">
-          <div className="rounded-3xl bg-black/40 border border-white/10 p-6 backdrop-blur-md shadow-xl">
+          <div className="rounded-3xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 p-6 backdrop-blur-md shadow-xl">
             <div className="flex flex-wrap gap-4 justify-center">
               {itemsByTab[active].map((item, index) => (
                 <Pill
